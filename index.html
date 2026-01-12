@@ -299,9 +299,27 @@
             }
         });
     })
+</script>
+
+<script>
+    const hero = document.querySelector(".hero");
+    const navbar = document.querySelector("nav");
 
 
+
+    const observer_hero = new IntersectionObserver ((entries) => {
+        
+        if(mobile__tablet.matches) {
+            if(entries[0].isIntersecting){
+                navbar.classList.remove("nav--fixed");
+            }else{
+                navbar.classList.add("nav--fixed");
+            }
+        }
+    })
+    observer_hero.observe(hero);
 
 </script>
+
 </body>
 </html>
