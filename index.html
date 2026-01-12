@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinta los Abuelos</title>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinta los Abuelos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios_new,arrow_forward_ios&display=swap"/> 
+
+
+
+    <link rel="icon" href="./icons/Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="" defer></script>
+</head>
+</head>
+<body>
+<header>
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links--container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+            <a href="#" class="home-link"><img src="./img/Logo.jpeg" width="150px" style="border-radius: 50%;"></a>
+            <a href="#imagenes">Imagenes</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#ubicacion">Ubicacion</a>
+        </div>
+    </nav>
+
+    <div class="hero bg__img">
+        <div class="hero-content">
+            <h1>Quinta los Abuelos</h1>
+
+            <p class="hero-description">
+                Quincho cerrado con gran espacio verde y pileta, ideal para disfrutar en familia.
+            </p>
+
+            <div class="hero-location">
+                <p>San benito, Entre Ríos</p>
+            </div>
+
+            <a class="button hero-cta" target="_blank" rel="no-referrer" href="https://wa.me/543455434865">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="#1acf02" d="M92.1 254.6c0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6 49.9-13.1 4.8 2.9c20.2 12 43.4 18.4 67.1 18.4l.1 0c72.6 0 133.3-59.1 133.3-131.8 0-35.2-15.2-68.3-40.1-93.2-25-25-58-38.7-93.2-38.7-72.7 0-131.8 59.1-131.9 131.8zM274.8 330c-12.6 1.9-22.4 .9-47.5-9.9-36.8-15.9-61.8-51.5-66.9-58.7-.4-.6-.7-.9-.8-1.1-2-2.6-16.2-21.5-16.2-41 0-18.4 9-27.9 13.2-32.3 .3-.3 .5-.5 .7-.8 3.6-4 7.9-5 10.6-5 2.6 0 5.3 0 7.6 .1l.8 0c2.3 0 5.2 0 8.1 6.8 1.2 2.9 3 7.3 4.9 11.8 3.3 8 6.7 16.3 7.3 17.6 1 2 1.7 4.3 .3 6.9-3.4 6.8-6.9 10.4-9.3 13-3.1 3.2-4.5 4.7-2.3 8.6 15.3 26.3 30.6 35.4 53.9 47.1 4 2 6.3 1.7 8.6-1 2.3-2.6 9.9-11.6 12.5-15.5 2.6-4 5.3-3.3 8.9-2s23.1 10.9 27.1 12.9c.8 .4 1.5 .7 2.1 1 2.8 1.4 4.7 2.3 5.5 3.6 .9 1.9 .9 9.9-2.4 19.1-3.3 9.3-19.1 17.7-26.7 18.8zM448 96c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320zM148.1 393.9L64 416 86.5 333.8c-13.9-24-21.2-51.3-21.2-79.3 .1-87.4 71.2-158.5 158.6-158.5 42.4 0 82.2 16.5 112.2 46.5 29.9 30 47.9 69.8 47.9 112.2 0 87.4-72.7 158.5-160.1 158.5-26.6 0-52.7-6.7-75.8-19.3z"/></svg>
+                Consultar por Whatsapp
+            </a>
+        </div>
+    </div>
+</header>
+<main>
+    <section id="imagenes" class="section">
+        <h2>Galería de Imágenes</h2>
+        <div class="img__container">
+            <div class="images wide"><img src="./img/img_pileta.webp"  loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images wide tall"><img src="./img/img_pileta_2.webp"     loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images wide tall"><img src="./img/img_pileta_3.webp"     loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_cocina.webp"       loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_cocina_2.webp"       loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_parrilla.webp"      loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_tablon.webp"       loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_patio.webp"       loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_patio_2.webp"      loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_patio_3.webp" loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_patio_4.webp" loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images wide tall"><img src="./img/img_banio.webp"          loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images"><img src="./img/img_banio_2.webp"      loading="lazy" onclick="FullView(this.src)"></div>
+            <div class="images wide"><img src="./img/img_banio_3.webp"      loading="lazy" onclick="FullView(this.src)"></div>
+            
+        </div>
+    </section>
+    <div id="FullImageView">
+
+        
+        <span class="material-symbols-outlined nav-arrow nav-arrow--left" onclick="changeImage(-1)">
+            arrow_back_ios_new
+        </span>
+        <img id="FullImage">
+        <span style="background-color: transparent;font-size: 20px; position:absolute; top:16px; left:16px; color:#fff;"class="contador"></span>
+        <span id="CloseButton" onclick="CloseFullView()">&times;</span>
+        <span class="material-symbols-outlined nav-arrow nav-arrow--right" onclick="changeImage(+1)">
+            arrow_forward_ios
+        </span>
+    </div>
+    <section id="servicios" class="section">
+        <h2>Servicios</h2>
+        <div class="card__container">
+            <div class="card">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M80-120v-80q38 0 57-20t75-20q56 0 77 20t57 20q36 0 57-20t77-20q56 0 77 20t57 20q36 0 57-20t77-20q56 0 75 20t57 20v80q-59 0-77.5-20T748-160q-36 0-57 20t-77 20q-56 0-77-20t-57-20q-36 0-57 20t-77 20q-56 0-77-20t-57-20q-36 0-54.5 20T80-120Zm0-180v-80q38 0 57-20t75-20q56 0 77.5 20t56.5 20q36 0 57-20t77-20q56 0 77 20t57 20q36 0 57-20t77-20q56 0 75 20t57 20v80q-59 0-77.5-20T748-340q-36 0-55.5 20T614-300q-57 0-77.5-20T480-340q-38 0-56.5 20T346-300q-59 0-78.5-20T212-340q-36 0-54.5 20T80-300Zm196-204 133-133-40-40q-33-33-70-48t-91-15v-100q75 0 124 16.5t96 63.5l256 256q-17 11-33 17.5t-37 6.5q-36 0-57-20t-77-20q-56 0-77 20t-57 20q-21 0-37-6.5T276-504Zm392-336q42 0 71 29.5t29 70.5q0 42-29 71t-71 29q-42 0-71-29t-29-71q0-41 29-70.5t71-29.5Z"/></svg>
+                <h4>Pileta</h4>
+            </div>
+            <div class="card">          
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M320-120v-80H160q-33 0-56.5-23.5T80-280v-480q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v480q0 33-23.5 56.5T800-200H640v80H320ZM160-280h640v-480H160v480Zm0 0v-480 480Z"/></svg>
+                <h4>TV</h4>
+            </div>
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M160-80q-17 0-28.5-11.5T120-120v-200q0-33 23.5-56.5T200-400v-160q0-33 23.5-56.5T280-640h160v-58q-18-12-29-29t-11-41q0-15 6-29.5t18-26.5l56-56 56 56q12 12 18 26.5t6 29.5q0 24-11 41t-29 29v58h160q33 0 56.5 23.5T760-560v160q33 0 56.5 23.5T840-320v200q0 17-11.5 28.5T800-80H160Zm120-320h400v-160H280v160Zm-80 240h560v-160H200v160Zm80-240h400-400Zm-80 240h560-560Zm560-240H200h560Z"/></svg>
+                <h4>Eventos Infantiles</h4>
+            </div>
+        </div>
+        <div class="services__list__container">
+            <ul>
+                <li><p><strong class="important">Sólo para reuniones de carácter familiar, recreativo y eventos infantiles</strong><p></li>
+                <li><p><strong class="important">Máximo de 30 personas</strong></p></li>
+                <li><p>A 12 km del centro de Paraná</p></li>
+                <li><p>Parrilla grande</p></li>
+                <li><p>Pileta 7 x 3 mts</p></li>
+                <li><p>Tablón grande con 2 bancos</p></li>
+                <li><p>19 sillas plásticas</p></li>
+                <li><p>Juego de vajilla para 12 personas</p></li>
+                <li><p>Televisor</p></li>
+                <li><p>Dispenser con agua potable</p></li>
+                <li><p>Ventilador turbo pie</p></li>
+                <li><p>Heladera exhibidora, freezer y cocina</p></li>
+                <li><p>Cama doble de una plaza</p></li>
+                <li><p>Termotanque</p></li>
+                <li><p>Parlante con bluetooth</p></li>
+                <li><p>Mesa de ping pong</p></li>
+                <li><p>2 baños (1 exterior)</p></li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <section id="ubicacion" class="section">
+        <div class="description__map">
+            <h2>Ubicación</h2>
+            <p>Ferre, entre Echague y Crespo - San Benito</p>
+            <a class="button hero-cta" target="_blank" rel="no-referrer" href="https://wa.me/543455434865">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="#1acf02" d="M92.1 254.6c0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6 49.9-13.1 4.8 2.9c20.2 12 43.4 18.4 67.1 18.4l.1 0c72.6 0 133.3-59.1 133.3-131.8 0-35.2-15.2-68.3-40.1-93.2-25-25-58-38.7-93.2-38.7-72.7 0-131.8 59.1-131.9 131.8zM274.8 330c-12.6 1.9-22.4 .9-47.5-9.9-36.8-15.9-61.8-51.5-66.9-58.7-.4-.6-.7-.9-.8-1.1-2-2.6-16.2-21.5-16.2-41 0-18.4 9-27.9 13.2-32.3 .3-.3 .5-.5 .7-.8 3.6-4 7.9-5 10.6-5 2.6 0 5.3 0 7.6 .1l.8 0c2.3 0 5.2 0 8.1 6.8 1.2 2.9 3 7.3 4.9 11.8 3.3 8 6.7 16.3 7.3 17.6 1 2 1.7 4.3 .3 6.9-3.4 6.8-6.9 10.4-9.3 13-3.1 3.2-4.5 4.7-2.3 8.6 15.3 26.3 30.6 35.4 53.9 47.1 4 2 6.3 1.7 8.6-1 2.3-2.6 9.9-11.6 12.5-15.5 2.6-4 5.3-3.3 8.9-2s23.1 10.9 27.1 12.9c.8 .4 1.5 .7 2.1 1 2.8 1.4 4.7 2.3 5.5 3.6 .9 1.9 .9 9.9-2.4 19.1-3.3 9.3-19.1 17.7-26.7 18.8zM448 96c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320zM148.1 393.9L64 416 86.5 333.8c-13.9-24-21.2-51.3-21.2-79.3 .1-87.4 71.2-158.5 158.6-158.5 42.4 0 82.2 16.5 112.2 46.5 29.9 30 47.9 69.8 47.9 112.2 0 87.4-72.7 158.5-160.1 158.5-26.6 0-52.7-6.7-75.8-19.3z"/></svg>
+                Consultar por Whatsapp
+            </a>
+            <a href="https://www.google.com/maps?q=-31.7753178,-60.4337246&z=17&hl=es"class="button button__llegar" rel="no-referrer" target="_blank"> 
+                <img src="./icons/gps.png">
+                Como Llegar
+            </a>
+
+        </div>
+        <div id="map"></div>
+    </section>
+
+</main>
+<script>
+
+    const images = document.querySelectorAll(".images img");
+    const fullImage = document.getElementById("FullImage");
+    const fullImageView = document.getElementById("FullImageView");
+    const contador = document.querySelector(".contador");
+
+    let currentIndex = 0;
+
+
+
+    function FullView(src) {
+        images.forEach((img, index) => {
+            if(img.src === src) {
+                currentIndex = index;
+            }
+        });
+
+        fullImage.src = src;
+        fullImageView.style.display = "flex";
+
+        document.body.style.overflow = "hidden";
+
+
+        contador.textContent = `${currentIndex+1}/${images.length}`;
+    } 
+
+    function CloseFullView () {
+        document.getElementById("FullImageView").style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    function changeImage(direction) {
+        currentIndex += direction;
+
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+        // Cambiamos la imagen del modal
+        const nuevaImagen = images[currentIndex];
+        fullImage.src = nuevaImagen.src;
+
+        contador.textContent = `${currentIndex+1}/${images.length}`;
+    }
+
+    document.addEventListener("keydown", function(event) {
+    // Si la tecla presionada es Escape (Esc)
+    if (event.key === "Escape") {
+        CloseFullView();
+    }
+});
+</script>
+
+<script>
+    const sectionElements = document.querySelectorAll(".section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach ((entry)=> {
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+        })
+    },{
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0,
+    });
+
+    sectionElements.forEach((section)=> {
+        observer.observe(section);
+    })
+
+</script>
+<script>
+        
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var map = L.map('map').setView([-31.77541480927194, -60.43363658692148], 15);
+    
+            var pinIcon = L.icon ({
+                iconUrl: './icons/pin.png',
+                iconSize: [50,50],
+                iconAnchor: [25,50],
+                popupAnchor: [0, -50]
+            })
+    
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+            
+            var marker = L.marker([-31.77541480927194, -60.43363658692148], {icon:pinIcon}).addTo(map)
+                .bindPopup("<p><strong>Quinta los Abuelos</strong><br>Ferré, entre Echague y Crespo, San Benito</p>",{closeButton:false})
+                .openPopup();
+        })
+        
+
+</script>
+</body>
+</html>
