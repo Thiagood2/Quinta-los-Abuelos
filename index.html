@@ -280,5 +280,28 @@
         
 
 </script>
+
+<script>
+
+    const mobile__tablet = window.matchMedia("(max-width:768px)");
+    const links__list = document.querySelectorAll(".links--container a");
+    const sidebar__menu = document.querySelector("#sidebar-active");
+
+
+    function closeSideBar () {
+        sidebar__menu.checked = false;
+    }
+
+    links__list.forEach ((link)=> {
+        link.addEventListener("click", () => {
+            if(mobile__tablet.matches){
+                closeSideBar();
+            }
+        });
+    })
+
+
+
+</script>
 </body>
 </html>
