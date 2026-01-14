@@ -480,10 +480,7 @@ nav svg {
     color: #ccdadf;
 }
 
-.important {
-    font-size: .9em;
-    text-transform: uppercase;
-}
+
 
 @media (max-width:768px) {
     .card__container {
@@ -505,9 +502,7 @@ nav svg {
     .services__list__container li > p {
         font-size: 1em;
     }
-    .important {
-        font-size: .8em;
-    }
+
 }
 
 /* -------------------- SECTION UBICACION --------------- */
@@ -584,3 +579,90 @@ nav svg {
     }
 }
 
+/* ---- SECTION ALQUILER ------------- */
+
+
+
+.alquiler {
+    text-align: center;
+}
+
+
+.alquiler__cards {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.alquiler__card {
+    background-color: #bfb3ab;
+    padding: 25px 20px;
+    border-radius: 10px;
+    max-width: 320px;
+    flex: 1 1 280px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alquiler__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.alquiler__card--destacado {
+    background-color: #a99c93;
+}
+
+.alquiler__icon svg {
+    width: 48px;
+    height: 48px;
+    fill: #fff;
+}
+
+.alquiler__capacidad {
+    font-weight: 600;
+    background-color: rgba(255,255,255,0.25);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+
+.alquiler__nota {
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.alquiler__condiciones {
+    margin-top: 25px;
+    padding: 18px;
+    background-color: #f3f1ef;
+    border-radius: 10px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.alquiler__condiciones h4 {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.alquiler__condiciones ul {
+    padding-left: 18px;
+}
+
+.alquiler__condiciones li {
+    margin-bottom: 6px;
+    list-style: circle;
+}
